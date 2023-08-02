@@ -68,19 +68,7 @@ def image_inference():
         username=username_file.read().decode("utf-8")
     
         image = cv2.imdecode(np.fromstring(image_file.read(), np.uint8), cv2.IMREAD_COLOR)
-        
-        demography = DeepFace.analyze(image)
-
-        # emotion = demography[0]['emotion']
-        dominant_emotion = demography[0]['dominant_emotion']
-        region = demography[0]['region']
-        age = demography[0]['age']
-        #gender = demography[0]['gender']
-        dominant_gender = demography[0]['dominant_gender']
-        # race = demography[0]['race']
-        dominant_race = demography[0]['dominant_race']
-        result="Emotion =" + " " + str(dominant_emotion) + " "  + "Age =" + " "  + str(age) + " "  + "Dominant_Race =" + " "  + str(dominant_race) + " "  + 'Gender =' + " " + str(dominant_gender) 
-
+        result= deep_face(image) #DeepFace
         end_time = time.time()
         execution_time = end_time - start_time
         save_model_output_to_db(username,result,str(execution_time))
@@ -119,6 +107,22 @@ def get_user_stats():
         })
 
     return jsonify(stats)
+
+def deep_face(data):
+    
+    demography = DeepFace.analyze(data)
+    # emotion = demography[0]['emotion']
+    dominant_emotion = demography[0]['dominant_emotion']
+    region = demography[0]['region']
+    age = demography[0]['age']
+    #gender = demography[0]['gender']
+    dominant_gender = demography[0]['dominant_gender']
+    # race = demography[0]['race']
+    dominant_race = demography[0]['dominant_race']
+    result = "Emotion =" + " " + str(dominant_emotion) + " "  + "Age =" + " "  + str(age) + " "  + "Dominant_Race =" + " "  + str(dominant_race) + " "  + 'Gender =' + " " + str(dominant_gender) 
+    return result
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
