@@ -12,10 +12,17 @@ DeepFace and Http server work
 # My current libraries
 
 requests == 2.29.0
+
 flask == 2.2.2
+
 numpy == 1.24.2
+
 opencv == 4.6.0
+
 tensorflow == 2.8.0
+
 tensorflow-gpu == 2.8.0
+
 deepface == 0.0.79
+
 flask == 2.2.2
