@@ -13,6 +13,8 @@ Original repo -- > https://github.com/serengil/deepface
 
 # My current libraries
 
+python == 3.9.13
+
 requests == 2.29.0
 
 flask == 2.2.2
