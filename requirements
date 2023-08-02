@@ -1,4 +1,5 @@
-# Those works for me
+# My current libraries
+
 requests == 2.29.0
 flask == 2.2.2
 numpy == 1.24.2
