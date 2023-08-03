@@ -1,7 +1,8 @@
 import requests
 import argparse
 
-def req(url:str):
+
+def req(url: str):
     response = requests.get(url)
 
     if response.status_code == 200:
@@ -9,10 +10,13 @@ def req(url:str):
     else:
         print("Error:", response.text)
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Username')
-    parser.add_argument('--name', type=str, default="Fatih" , help='Username for Database')
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Username")
+    parser.add_argument(
+        "--name", type=str, default="Fatih", help="Username for Database"
+    )
     args = parser.parse_args()
-    username=args.name
-    url = "http://localhost:5000/user_stats?username="+username
+    username = args.name
+    url = "http://localhost:5000/user_stats?username=" + username
     req(url)
