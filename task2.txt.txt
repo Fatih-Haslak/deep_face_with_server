@@ -1,6 +1,0 @@
-2) docker ubuntu uzerinde calistiramadim, hem requirementlar patladı, onları elle düzelttiğimde ise kodda sikinti oldu, Dockerfile olusturup kendi bilgisayarımda build alıp calistirabilecegim bir formata getirir misin, (docker dolayisiyla gpu destegi olayını kaldirabilirsin)
-3) kod yazmaktan daha onemli sey ekip olarak yazmak, dolayisiyla variable naming ve folder structure çok onemli, src, lib, utils, vb klasörler kullanmakta fayda var. Indentation da tutarlı degil, formatter kullanmanı tavsiye ederim
-4) yine büyük bir proje yazıyorsak typing modülünü kullanmak çok onemli, hem coding phasede type hatalarını yakalamak icin, hem de senden sonra birisi kodu değiştirecek oldugunda hangi argument hangi type bilebilmesi icin
-
-
-*****Indentation da tutarlı degil, formatter kullanmanı tavsiye ederim*****
